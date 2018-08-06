@@ -1,4 +1,5 @@
-# HDP-CPP
+# HDP-CPP (Handwritten Digit Predictor)
+
 A exploratory project on predicting handwritten digits in C++
 
 The aim is to predict handwritten digits using ML algorithms from scratch without using any ML libraries.
