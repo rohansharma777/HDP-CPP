@@ -2,6 +2,7 @@
 #include <Eigen/Dense>
 #include <fstream>
 #include <string>
+#include "costfunction.h"
 
 
 using namespace Eigen;
@@ -14,6 +15,7 @@ int main(){
     in.open("Dataset.csv");
 
     MatrixXd X(5000,400);
+    VectorXd y(5000);
 
     int i=0, j=0;
 
@@ -29,5 +31,23 @@ int main(){
     j = 0;
     i++;
 }
-    
+
+
+   i = 0;
+
+   in.close();
+
+   in.open("y.csv");
+
+    while (getline(in, line)){
+    stringstream lineStream(line);
+    y(i) = stod(line);
+    i++;
+}
+
+    cout<<y<<endl;
+    in.close();
+
+    double jot;
+    jot = costfunction(X, y);
 }
